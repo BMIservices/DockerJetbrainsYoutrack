@@ -17,7 +17,7 @@ ENV APP_HOME /var/lib/$APP_SUFFIX
 # preparing home (data) directory and user+group
 #we are with Alpine linux no /opt
 RUN mkdir -p $APP_PREFIX
-#RUN mkdir -p $APP_DIR
+RUN mkdir -p $APP_DIR
 RUN mkdir $APP_HOME
 #in alpine linux no useradd or groupadd
 RUN addgroup  -S -g $APP_UID $APP_USER
