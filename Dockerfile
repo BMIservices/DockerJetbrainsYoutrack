@@ -31,9 +31,8 @@ WORKDIR $APP_PREFIX
 RUN apk update && apk add wget 
 #to switch from busybox to bash
 #RUN apk add bash && ln -sf /bin/bash /bin/sh
-RUN wget -q --no-check-certificate https://download.jetbrains.com/hub/charisma/$APP_DISTFILE && \
-    unzip -q $APP_DISTFILE && \
-    mv $APP_DISTNAME $APP_DIR && \
+RUN wget -q --no-check-certificate https://download.jetbrains.com/charisma/$APP_DISTFILE && \
+    unzip -q $APP_DISTFILE -d $APP_DIR && \
     rm $APP_DISTFILE && \
     rm -rf $APP_DIR/internal/java && \
     chown -R $APP_USER:$APP_USER $APP_DIR
